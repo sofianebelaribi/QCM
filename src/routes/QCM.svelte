@@ -20,6 +20,7 @@
 	let textAnswer;
 	let textAnswersArray;
 	textAnswersArray = textAnswers.split('|');
+	textAnswersArray = shuffleArray(textAnswersArray).slice(0, 5);
 	let correctAnswers = [];
 	for (let i=0;i<textAnswersArray.length;i++) {
 		textAnswer = textAnswersArray[i];
@@ -36,6 +37,8 @@
 	$: if ($changeQuestions) {
 		textAnswersArray = [];
 		textAnswersArray = textAnswers.split('|');
+		textAnswersArray = shuffleArray(textAnswersArray).slice(0, 5);
+
 		correctAnswers = [];
 		for (let i=0;i<textAnswersArray.length;i++) {
 			textAnswer = textAnswersArray[i];

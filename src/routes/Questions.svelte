@@ -49,9 +49,17 @@
 		})
 		if (modeView=='crypted' || modeView=='evaluation') {
 			// questions = shuffleArray(questionsCodeArrayChanged);
-			questions = shuffleArray(questionsCodeArrayChanged.slice(0, 30));
-		} else {questions = questionsCodeArrayChanged;
-		questions = shuffleArray(shuffleArray(questionsCodeArrayChanged).slice(0, 30));}
+			// questions = shuffleArray(questionsCodeArrayChanged.slice(0, 30));
+			const maxQuestions = questionsCodeArrayChanged.length+1; // Replace with the actual maximum number of questions
+			const randomNumber = Math.floor(Math.random() * (maxQuestions - 50));
+			questions = questionsCodeArrayChanged.slice(randomNumber, randomNumber+50);
+		} else {
+			questions = questionsCodeArrayChanged;
+			const maxQuestions = questionsCodeArrayChanged.length+1; // Replace with the actual maximum number of questions
+			const randomNumber = Math.floor(Math.random() * (maxQuestions - 50));
+			questions = questionsCodeArrayChanged.slice(randomNumber, randomNumber+50);
+			// questions = shuffleArray(shuffleArray(questionsCodeArrayChanged).slice(0, 30));
+		}
 	} else {}
 	$: countExpectedAnswers.update(n => questions.filter(element => element !='').length);
 	$: countCorrectAnswers.update(n => 0);
