@@ -122,12 +122,12 @@
 				intégrer des vidéos ou mettre en page de manière plus précise sa
 				question
 			</div>
-			<h5 class="is-5 mt-5">Fichiers externes</h5>
+			<!-- <h5 class="is-5 mt-5">Fichiers externes</h5>
 			<div>
 				On peut écrire son quiz dans un fichier texte qu'on héberge sur
 				internet. Text2quiz peut lire ce fichier si on met l'URL dans le
 				lien ainsi : https://text2quiz.vercel.app/#URL
-			</div>
+			</div> -->
 		</div>
 	</div>
 </div>
