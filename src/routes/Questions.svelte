@@ -48,8 +48,10 @@
 			questionsCodeArrayChanged.push(questionCodeArray);
 		})
 		if (modeView=='crypted' || modeView=='evaluation') {
-			questions = shuffleArray(questionsCodeArrayChanged);
-		} else {questions = questionsCodeArrayChanged;}
+			// questions = shuffleArray(questionsCodeArrayChanged);
+			questions = shuffleArray(questionsCodeArrayChanged.slice(0, 30));
+		} else {questions = questionsCodeArrayChanged;
+		questions = shuffleArray(shuffleArray(questionsCodeArrayChanged).slice(0, 30));}
 	} else {}
 	$: countExpectedAnswers.update(n => questions.filter(element => element !='').length);
 	$: countCorrectAnswers.update(n => 0);
