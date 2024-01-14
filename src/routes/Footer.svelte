@@ -9,7 +9,7 @@
 <footer class="footer p-5 mt-6">
 	<div class="content has-text-centered is-size-6">
 				<p>If you have any questions, please send an email to: <a href="mailto:sofiane5434@gmail.com">sofiane5434@gmail.com</a></p>
-				<p><a href="https://raw.githubusercontent.com/sofianebelaribi/QCM/master/QCM1.txt" target="_blank">Anapath QCM 1</a></p>
+				<p><a href="https://qcm-five.vercel.app/#https://raw.githubusercontent.com/sofianebelaribi/QCM/master/QCM1.txt" target="_blank">QCM Anapath</a></p>
 	</div>
 </footer>
 
