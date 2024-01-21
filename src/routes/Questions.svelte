@@ -48,17 +48,21 @@
 			questionsCodeArrayChanged.push(questionCodeArray);
 		})
 		if (modeView=='crypted' || modeView=='evaluation') {
-			// questions = shuffleArray(questionsCodeArrayChanged);
-			// questions = shuffleArray(questionsCodeArrayChanged.slice(0, 30));
-			const maxQuestions = questionsCodeArrayChanged.length+1; // Replace with the actual maximum number of questions
-			const randomNumber = Math.floor(Math.random() * (maxQuestions - 50));
-			questions = questionsCodeArrayChanged.slice(randomNumber, randomNumber+50);
+			questions = shuffleArray(questionsCodeArrayChanged);
+			questions = shuffleArray(questionsCodeArrayChanged.slice(0, 50));
+			// Use random non shuffled batches of 50 questions
+			// const maxQuestions = questionsCodeArrayChanged.length+1; // Replace with the actual maximum number of questions
+			// const randomNumber = Math.floor(Math.random() * (maxQuestions - 50));
+			// questions = questionsCodeArrayChanged.slice(randomNumber, randomNumber+50);
 		} else {
 			questions = questionsCodeArrayChanged;
-			const maxQuestions = questionsCodeArrayChanged.length+1; // Replace with the actual maximum number of questions
-			const randomNumber = Math.floor(Math.random() * (maxQuestions - 50));
-			questions = questionsCodeArrayChanged.slice(randomNumber, randomNumber+50);
-			// questions = shuffleArray(shuffleArray(questionsCodeArrayChanged).slice(0, 30));
+			// Use random non shuffled batches of 50 questions
+			// const maxQuestions = questionsCodeArrayChanged.length+1; // Replace with the actual maximum number of questions
+			// const randomNumber = Math.floor(Math.random() * (maxQuestions - 50));
+			// questions = questionsCodeArrayChanged.slice(randomNumber, randomNumber+50);
+			
+			// Use random shuffled 50 questions
+			questions = shuffleArray(shuffleArray(questionsCodeArrayChanged).slice(0, 50));
 		}
 	} else {}
 	$: countExpectedAnswers.update(n => questions.filter(element => element !='').length);
